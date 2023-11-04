@@ -1,0 +1,64 @@
+git init #fazer a inicialização do repositória na pasta atual, usa sempre que for desenvolver um projeto novo
+
+#adcionar arquivos
+
+
+git status #mostra o status dos arquivos que estão para ser versionados
+
+git add .\index.html  #adciona o arquivo no repositório
+git add . #todos os arquivos
+
+#apos adcionar tem que fazer o commit
+
+git commit -a -m "Colocar texto de alteração" # da commitem todos arquivos e adcionar um descrição para aquela mudança
+
+#Como adcionar um origem remota ao git
+- Criar um repositório no github
+
+#procedimento de linkar o repositorio local com o remoto
+git remote add origin https://github.com/Aldomario/teste.git #conectando com a pasta remota
+git branch -M main #seleciona o branch main, que é qual pasta que esta ativa naquele momento
+git push -u origin main #ato de enviar codigo atual para o remositorio remoto
+
+#funcionalidade do branch
+
+O branch permite que cada desenvolvedor faça suas alterações em codigos disntintos, ou seja faz a subdivisão do codigo principal main e outros
+Dessa forma quando uma alteração for validada ela vai ser adcionada ao codigo principal, de maneira coordenada e organizada, para que nao aja confunsão de código
+
+Então dessa forma para criar um branch para aquela tarefa especifica faz-se:
+
+git checkout -b "novobranch" #flag -b cria um novo
+
+faz os mermos procedimentos de commit
+porem agora para enviar para o novo repositorio remoto faz-se:
+
+git push --set-upstream origin novabranch
+
+
+#o que a pessoa que vai interligar os codigos vai fazer, para passar a modificação para o main
+
+git checkout main #passou do branch segundário para o principal (mudando para o branch)
+
+git branch #mostra a lista de branchs e o que esta selecionado
+
+git merge test #comando que une os códigos, disponibilizando assim para os demais usuários
+
+git pull é quando eu quero trazer as informações do repositorio remoto para o local, quando tenha diferença de commits
+
+#Como clonar um projeto novo
+
+git clone https://github.com/Aldomario/teste.git Nomeprojeto
+
+Lembrar de abrir em open integrated terminal
+
+#como excluir um arquivo que eu adcionei sem querer, e que esta  em não commited
+git clean -f #remove arquivos não estão commiteds
+
+
+git checkout .\index.html #vai voltar para versão anterior, tem que ser feito antes do commit
+
+git log #mostra todas as modificações do codigo
+
+#Conectar a um token de acesso remoto
+git clone https://token-de-acesso@github.com/seu-usuario/seu-repo.git
+git clone https://asdasdaasdasd1psZG@github.com/Aldomario/testefinal.git
